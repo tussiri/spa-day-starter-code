@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <title>Add User</title>
+</head>
+
+<!--TODO add the correct headers, create a form that accepts user input for each of the User fields password, username, email
+TODO form should be set to post to /user; be sure to use the correct type for email and password, this will allow us to do client side validation.-->
+
+<body>
+
+
+<form method="post" th:action="@{/user}">
+    <p th:text="${error}" th:if="${error!= null}"></p>
+    <label>Username
+        <input type="text" name="username" th:value="${username}"> <br>
+    </label>
+    <label>Email Address
+        <input type="email" name="email" placeholder="Please enter your email address" th:value="${email}"> <br>
+    </label>
+    <label>Password
+        <input type="password" name="password" placeholder="" th:value="${password}"> <br>
+    </label>
+    <lable>Reenter Password:
+        <input type="password" name="verify">
+    </lable>
+
+    <input type="submit" value="Sign up!">
+</form>
+
+</body>
+</html>
