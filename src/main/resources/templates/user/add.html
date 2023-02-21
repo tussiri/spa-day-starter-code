@@ -11,24 +11,27 @@ TODO form should be set to post to /user; be sure to use the correct type for em
 
 <body>
 
+<form method="post" action="/user">
 
-<form method="post" th:action="@{/user}">
-    <p th:text="${error}" th:if="${error!= null}"></p>
-    <label>Username
-        <input type="text" name="username" th:value="${username}"> <br>
+    <label>Username:
+        <input type="text" name="username" th:value="${username}">
     </label>
-    <label>Email Address
-        <input type="email" name="email" placeholder="Please enter your email address" th:value="${email}"> <br>
-    </label>
-    <label>Password
-        <input type="password" name="password" placeholder="" th:value="${password}"> <br>
-    </label>
-    <lable>Reenter Password:
-        <input type="password" name="verify">
-    </lable>
 
-    <input type="submit" value="Sign up!">
+    <label>Email Address:
+        <input type="email" name="email" th:value="${email}">
+    </label>
+    <label>Password:
+        <input type="password" name="password" th:value="${password}">
+    </label>
+
+    <label>Verify Password:
+        <input type="password" name="verify" th:value="${verify}">
+    </label>
+
+    <input type="submit" value="Sign in!">
+
 </form>
+
 
 </body>
 </html>
